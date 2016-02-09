@@ -1,11 +1,16 @@
 body {
     font-size: x-small;
-    background: #cfcfcf;
+    background: #212131;
     font-family: Verdana, Arial, Helvetica, sans-serif;
-    margin: 0;
+    margin: 5px;
     color: #2e2e2e;
 }
 
-a { Text-Decoration:none; }
+a { Text-Decoration:none; color: #55aaff; }
 a:hover { Text-Decoration:underline; }
 
+img { border: 0; }
+table { border-collapse: collapse; }
+form { margin: 0; padding: 0; }
+input[type=text], input[type=password], textarea { border: #969696 1px inset; font-family: Verdana, Arial, Helvetica, sans-serif; }
+pre { white-space: pre-wrap; }
