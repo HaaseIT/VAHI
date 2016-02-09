@@ -1,0 +1,147 @@
+<?php
+// $Id: de.cat,v 1.6 2007/05/30 10:27:48 mhaase Exp $
+
+$T = array(
+	// Misc. messages
+	'continue' => 'Weiter &gt;&gt;',
+	'back' => '&lt;&lt; Zurück',
+
+	// Login messages
+	'login_formhead' => 'Bitte geben Sie Ihren Benutzernamen und Passwort hier ein:',
+	'login_submittext' => 'Anmelden',
+	'login_success' => 'Anmeldung erfolgreich.',
+	'login_fail' => 'Die Anmeldung war nicht erfolgreich, bitte überprüfen Sie Ihren Benutzernamen und Passwort.',
+	'login_logout' => 'Sie wurden abgemeldet.',
+
+	// Action messages
+	'actions_none' => 'Keine Aktionen erfolgt.',
+	'actions_link_1' => 'Die Datei(en) "',
+	'actions_link_2' => '" wurden verknüpft.',
+	'actions_unlink_1' => 'Die Verknüpfung der Datei(en) "',
+	'actions_unlink_2' => '" wurde entfernt.',
+	'actions_keyword_1' => 'Der Suchbegriff wurde mit den folgenden Dateien verknüpft: "',
+	'actions_keyword_2' => '"',
+	'actions_keyword_remove' => 'Die Verknüpfung des Suchbegriffs wurde entfernt.',
+	'actions_comment' => 'Der Dateikommentar wurde geändert.',
+	'actions_owner' => 'Der Dateibesitzer wurde geändert.',
+
+	'actions_link_ft' => 'Die Datei wurde verknüpft.',
+	'actions_keyword_ft' => 'Der Suchbegriff wurde verknüpft.',
+	'actions_keyword_remove_ft' => 'Die Verknüpfung des Suchbegriffs wurde entfernt.',
+
+	// Languages
+	'language_en' => 'Englisch',
+	'language_de' => 'Deutsch',
+
+	// User navigation
+	'unav_head' => 'Benutzermenü:',
+	'unav_listing_splitted' => 'geteilte auflistung',
+	'unav_listing_full' => 'volle auflistung',
+	'unav_cp' => 'control panel',
+	'unav_cp_mainmenu' => 'hauptmenü',
+	'unav_cp_leave' => 'cp verlassen',
+	'unav_logout' => 'abmelden',
+	'unav_whoami_1' => 'Sie sind Angemeldet als: <strong>',
+	'unav_whoami_2' => '</strong>.',
+
+	// Error messages
+	'error_403' => '403 Verboten.',
+	'error_denied' => 'Zugriff verweigert.',
+
+	// Search messages
+	'search_submittext' => 'Suchen',
+	'search_noresults' => 'Die Suche verlief ergebnisslos!',
+	'search_string_all' => 'Alle',
+	'search_byuser_string' => 'Suche nach Benutzer',
+
+	// JS messages (eg. alert windows)
+	'js_msg_nofiles' => 'Keine Dateien ausgewählt',
+
+	// Image messages (when image is viewed)
+	'image_nav_popup_close_1' => '<strong>Schließen</strong>',
+	'image_nav_left' => '<strong>&lt;&lt;</strong>',
+	'image_nav_index' => '<strong>Index</strong>',
+	'image_nav_right' => '<strong>&gt;&gt;</strong>',
+	'image_nav_rotate_1' => 'Bild um  ',
+	'image_nav_rotate_2' => ' grad drehen.',
+	'image_nav_osize' => 'In Originalgröße zeigen',
+	'image_nav_resized' => 'Verkleinert zeigen',
+	'image_nav_clickonimagecloses' => 'Klicken Sie auf das Bild um dieses Fenster zu schließen<br>',
+	'image_nav_clickonimageback' => 'Klicken Sie auf das Bild um zur Auflistung zurückzukehren',
+	'image_admin_head' => 'Datei Administration',
+	'image_admin_notlinked_1' => 'Diese Datei ist noch nicht verknüpft, um sie zu verknüpfen klicken Sie bitte ',
+	'image_admin_notlinked_2' => 'hier',
+	'image_admin_notlinked_3' => '.',
+	'image_admin_nokeywords' => 'Diese Datei ist mit keinem Suchbegriff verknüpft.',
+	'image_admin_keywords_head' => 'Die folgenden Suchbegriffe sind mit dieser Datei verknüpft:',
+	'image_admin_addkeyword_head' => 'Um einen Suchbegriff mit dieser Datei zu verknüpfen wählen Sie ihn bitte hier und klicken Sie auf "Ausführen".',
+	'image_admin_submittext' => 'Ausführen',
+	'image_admin_delkeyword_head' => 'Um eine Suchbegriff-Verknüpfung zu entfernen wählen Sie sie bitte hier und klicken Sie auf "Ausführen".',
+	'image_admin_comment_head' => 'Hier können Sie den Dateikommentar ändern:',
+	'image_admin_unlink_1' => 'Klicken Sie ',
+	'image_admin_unlink_2' => 'hier',
+	'image_admin_unlink_3' => ' um alle Verknüpfungen zu dieser Datei zu entfernen.',
+	'image_admin_gotoimage' => ' In Bildverzeichniss wechseln ',
+	'image_info_head' => 'Bildinformationen:',
+	'image_info_oimage_head' => 'Bildinformationen Originalgröße:',
+	'image_info_resized_head' => 'Bildinformationen verkleinert:',
+	'image_info_name' => 'Name:',
+	'image_info_width' => 'Breite:',
+	'image_info_height' => 'Höhe:',
+	'image_info_type' => 'Typ:',
+	'image_info_size_1' => 'Dateigröße:',
+	'image_info_size_2' => 'Bytes',
+	'image_info_date' => 'Dateidatum:',
+	'image_info_link' => 'Link:',
+
+	// Navigation messages (file-system nav)
+	'nav_head' => 'Navigation:',
+	'nav_back' => 'Zurück zur Dateiliste',
+	'nav_parent' => 'Ein Verzeichnis zurück',
+	'nav_empty' => 'Keine Verzeichnisse vorhanden...',
+
+	// Thumbs messages
+	'thumbs_pagesnav_head' => 'Bitte wählen Sie die gewünschte Seite:<br>',
+	'thumbs_pagesnav_leftleft' => '&lt;&lt;',
+	'thumbs_pagesnav_left' => '&lt;',
+	'thumbs_pagesnav_right' => '&gt;',
+	'thumbs_pagesnav_rightright' => '&gt;&gt;',
+	'thumbs_help_head_1' => 'Um ein Bild anzuzeigen klicken Sie bitte darauf.',
+	'thumbs_help_head_2' => 'Für den Download-Link benutzen Sie bitte den Dateinamen.',
+	'thumbs_help_load_1' => '',
+	'thumbs_help_load_2' => 'Bilder werden dargestellt...',
+	'thumbs_help_load_3' => 'Die Bilder',
+	'thumbs_help_load_4' => 'bis',
+	'thumbs_help_load_5' => 'von',
+	'thumbs_help_load_6' => ' werden dargestellt',
+	'thumbs_info_date' => 'Datum:',
+	'thumbs_info_dimensions' => 'Dimensionen:',
+	'thumbs_info_size' => 'Dateigröße:',
+	'thumbs_admin_head' => 'Administrationsoptionen:',
+	'thumbs_admin_checkboxtext' => 'Datei auswählen',
+	'thumbs_admin_notlinked' => 'Nicht verknüpft.',
+	'thumbs_admin_linked' => 'Verknüpft.',
+	'thumbs_admin_owner' => 'Besitzer:',
+	'thumbs_admin_keywords' => 'Suchbegriff(e):',
+	'thumbs_admin_select_link' => 'Ausgewählte Dateien verknüpfen',
+	'thumbs_admin_select_chown' => 'Dateibesitzer ändern',
+	'thumbs_admin_select_comment' => 'Dateikommentar ändern',
+	'thumbs_admin_select_addkey' => 'Suchbegriff verknüpfen',
+	'thumbs_admin_select_delkey' => 'Suchbegriff entfernen',
+	'thumbs_admin_select_unlink' => 'Dateiverknüpfung entfernen',
+	'thumbs_admin_selectall' => 'Alle auswählen',
+	'thumbs_admin_unselectall' => 'Alle abwählen',
+	'thumbs_admin_submittext' => 'Ausführen',
+	'thumbs_admin_keywordselect_head' => 'Suchbegriffe:',
+	'thumbs_admin_usersselect_head' => 'Benutzer:',
+	'thumbs_admin_comment_head' => 'Kommentar:',
+	'thumbs_info_generated' => 'Thumbnail(s) wurden erstellt.',
+
+	// File-listing messages
+	'file_head' => 'Dateien:',
+  'file_size_bytes' => 'Bytes',
+  'file_size_kbytes' => 'KBytes',
+  'file_size_mbytes' => 'MBytes',
+);
+
+?>

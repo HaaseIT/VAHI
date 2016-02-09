@@ -1,0 +1,106 @@
+Tree bauen ggf ressourcenintensiv, dann in db serializes schreiben, bei abfrage prf auf aenderungsdatun matches table
+LIMITATION: abarbeitung der keywords in base.inc mit schleife automatisieren, aktuelle methode begrenzt
+PERFORMACE: preparecategories() is often executed when there is no need to - to see where this happens go to function and enable debug output, eg control panel
+PERFORMACE: prepareCategories() -> select query, put in "LIMIT 1", so select only affects 1 row, we only want to check if there are ANY matches, also exchange * with one field name. meant query is: SELECT * FROM $PSS[db_table_matches] WHERE mat_kid = '$aRow[key_id]'
+
+FEATURE: 3rd category
+FEATURE: edit/delete keyword / showSelectKeywordToEditForm() - make max select height configurable in user-cp
+FEATURE: Keywords mehrsprachig
+ANNOYANCE: Bessere trennung von suchergebniss als momentaen (cookie bzw session, embed mode beachten) wg tabbed browsing / multiple windows
+FEATURE: Funktion die X zufaellige bilder aus db holt zb fuer startseite suche -> erst random category, dann testen ob subcats mit ergebnissen vorhanden, dann subcat, dann testen ob genug bilder (rows * cols) vorhanden - ggf getcategoriestree benutzen
+FEATURE: Shopfunktion zb als zusatzmodul?
+FEATURE: Modul-schnitstelle/funktionalitaet bzw plugins zum ergaenzen von features
+FEATURE: Thumbnail-generierung ausschaltbar aber vorhandene thumbs verwenden
+FEATURE: On the fly stempeln und original bilder zb durch apache rule (deny filetype) schuetzen, thumbs mit oder ohne stempel
+
+
+broken:
+bildadmin, einzelbild: wenn keine keywords definiert werden selects korrekt ausgeblendet, der dazugehörende hilfetext jedoch nicht.
+thumbs/resize/rotate folders werden ausgegeben! (verzeichnissaufruf und admin)
+
+> pss_openpopup entfernen, popups nur noch über eine funkt. und donothing() öffnen
+> comments - wenn ergebniss leerer string andere sprache nutzen wenn vorhanden
+> language selection?
+> get comment für beide varianten in funktion auslagern
+> show closing hr ausschaltbar
+> bilder -> diashow?
+> readme not shown when logged in?
+> admin overrides: rechte-überprüf-funktion bauen
+> textcats wie config-files einlesen, umstellen!! sicherheitsloch
+> fallback.config.inc - umstellen, keine ifs mehr, eine funktion die testet, fallback-werte-array mit funktion durchgehen
+> show hidden files/dirs for admin ansschaltbar? - link image to dir in singlecol ausschaltbar
+> link den bild erzeugt (thumbs) im singlecol-comment verfügbar machen
+> pss.php config werte nicht direkt in $PSS ablegen sondern zb in $PSS["CONF"]
+  sonstige sachen zusammenlegen? $C? $T?, einlesen wie .pss.conf?
+> .readme: mehrsprachigkeit ermöglichen [de]... sektionen / verzeichnisskommentare
+  mehrsprachig in DB? db struktur dafür ändern. entweder readme oder db comment
+  anzeigen, dominante in config festlegen - directories in db linkbar, keine suche
+  nur comment
+> textcats: fallback zu default wenn string in custom textcat nicht vorhanden
+  string durch funktion holen
+
+
+>>> Next Release <<<
+
+
+>>> Fun <<<
+> mp3-inderer - streamen von web
+
+
+>>> Generell <<<
+> SQL-Injection schutz
+> includes - mit is_file testen, fehler sammeln, am ende komplett ausgeben. bei fehler
+  script funktionen nicht ausführen
+> Status-messages (admin func) - farben konfigurierbar machen (Stylesheet)
+> Settings-leiste (oberer bildrand?) einbinden - language-selection + weitere
+  kompatibel mit gängingen browsern, dhtml (settings in cookie speichern?)
+> wenn beim bilder-durchgehen (im popup, limited dir mode) die "nächste" page
+  "erreicht" wird - parentwindow umblättern (lässt sich leicht errechnen durch
+	maxrows * maxcols und bildnummer)
+> config-werte aus pss.conf auf korrekte werte überprüfen
+> rotate_enable master config wert in pss.php bzw wenn nicht gd-mode autom. deakt.
+> Erkennung ob GD vorhanden, wenn nicht generate_thumbs auf false setzen
+	gleiches für resize und rotate wenn implementiert
+> resize_enable master config wert in pss.php, wenn false, bilder per
+  width/height-attribut (html img tag) skalieren
+> Update-script, tabellenüberprüfung sowie wenn zutreffend row-überprüfung (textcat)
+> Config-option usr lvl 2 - show only homedir (and its subdirs) in navi if show_navi = false
+> Display usr_filetext with image
+> Löschen von vom Script generierten Dateien (thumbs, resizes, rotates), nur
+  verwaiste und oder ? auf verzeichnissbasis, option erscheint wenn verz. leer
+  und generierte verz. vorhanden sind, ggf meldung im admin mode wenn verz dateileichen enthält /
+  orphans loggen?
+> Vereinfachen des codes, mehrfach benutzte sequenzen in funktionen auslagern,
+  base.inc übersichtlicher machen
+> Admin-oberfl. keyword-selects trennen (dir und popup-mode)
+> Bildverifikation überarbeiten - Geschwindigkeitsoptimierungen
+> watermarks /bilder stempeln
+> Dateimanager (kopieren, bewegen, löschen usw)
+> Mehr als 2 categories testen, js bestückung erweitern
+> Admin function: tote files und matches aus db entfernen
+> case-insensitives sort für aqueue / aimages (natcasesort(); natsort();?)
+> Priv-System implementieren, config overrides if level...
+
+
+>>> Never-ending-tasks <<<
+> Code-cleanup and documentation
+
+
+>>> Bugs/problems to fix <<<
+> äöü (IE probleme, charset mglweise?) im bildnamen machen probleme bild wird
+  nicht dargestellt
+
+
+>>> Bugs/problems to verify <<<
+
+
+>>> Known Issues <<<
+> Firebird -> 2.0, Safari has problems with dir-mode-administration, does not send variable
+  from js-generated formfield, IE 6/7 works fine. Look for other method.
+
+
+>>> Feature-requests <<<
+
+
+>>> Future ideas <<<
+> admin interface for users (link keywords to files)

@@ -1,0 +1,313 @@
+PSS Changelog
+
+ADDED: included prototype.js version 1.7
+
+>>> 2.3.d.13 2.7.2012 <<<
+- Fixed Session beeing lost in embedded mode
+
+>>> earlier... <<<
+ADDED: files - filetype pdf
+ADDED: .pss.conf section [files] - according switches in file-list generation
+CHANGED: All DB Tables to InnoDB for transaction capability
+FIXED: Add Keyword (in base language en) now works again
+REMOVED: function spacer()
+CHANGED: image navigation from table to ul
+FIXED: $PSS["keyword_lang_string"] now only holds the keyword, not the available languages anymore, therefor now delkey now works in the single image administration
+CHANGED: [popup] enable removed, in exchange [imgview] viewer added, values: inline, popup, highslide
+ADDED: Highslide Gallery viewer
+CHANGED: function debug
+REMOVED: [table] imagecell_valign, imagecell_align, fixedwidth - now handled by css class pss_imagecell
+REMOVED: pagesnav_show_home_end (<< / >> links on thumbs pagesnav)
+CHANGED: Thumbs pagesnav now in seperate function, changed from table to ul
+CHANGED: Dir and File navigation from tables to ul
+REMOVED: [icons], handled by css now
+REMOVED: [thumbs], [imgview] and [table] frame_image -> handled by css now
+CHANGE: DOCTYPE to XHTML transitional
+REMOVED: whole [body] section in .pss.conf, moved attributes to pss-body.css
+CHANGE: css is now in file, /pss/pss.css and pss-body.css (not included in embeded mode), not inline anymore
+REMOVED: upload functionality 19.8.2010
+REMOVED: rotate image functionality
+FIX: Call to PSS_resizePopup gave Notice:$aFile missing as argument when admin was disabled
+FIX: edit keyword form was broken by new table structure
+CHANGE: function getKeywordString() - replaced by more efficient function
+FEATURE: added "switch language to" links in user topnav, choices taken from $PSS["admin_comment_languages"]
+FIX: If if textcat-file is not present in requested language now not only is the english file loaded as before but also $PSS["l"] is now set to 'en'
+FEATURE: Added multi-language functions to keywords, so far only in frontend, functionality still has to be added to admin-backend
+FIX: Admin-overrides forced some options to "off" when not logged in
+added check if category3 has keywords before preparecategoriestree() handling works in it
+PERFORMANCE: added new indexes to DB tables
+CHANGE: changed search handling so more than 2 categories can be handled
+CHANGE: changed method of building categories tree, with 2 categories the new method needs only about half the time as old method
+FEATURE: 3 categories now work, tree is built correctly, changing the 3rd select according to the others is not in yet tho
+PERFORMANCE: change in PSS_head(), the function prepareCategoriesTree() is now only called if the search is rly shown
+
+>>> 2.2 beta 1 - 24.05.2007 <<<
+-- Feature Freeze and branching of 2.2 series --
+CHANGE: Profile function to change user password has been moved from CP to User CP
+CHANGE: UNav menupoint "Main menu" has been removed and "back to menu" links have been added when main menu is not shownFEATURE: in showSelectKeywordToEditForm() a max number of rows for the select has been set
+FIX: $PSS["PSS_DIR"] was not set properly when not in embeded mode
+FEATURE: when adding keywords, if you add another keyword by using "add another..." link, the last chosen category will be remembered
+FIX: When deleting keywords get vars were inherited falsely by wich there was no confirmation after the first time
+FIX: When while deleting or editing keywords no keyword was chosen and submit button was pressed the next screen showed an error, now the select screen is shown again
+- when there is no file-comment and comment_is_filename_if_not_in_db then $C["imgview"]["comment_position"] is set to bottom
+- new key in pss.conf: imgview -> crop_extension
+- new key in comment: [keywords] outputs keywords associated to this file
+- Added CSS to comment-output
+- added user control panel
+- debug option if logged is: refresh userdata
+- added more user-settings (db fields and code)
+- CP: "remove keyword" functionality has been added
+- CP: "edit keyword" functionality has been added
+- CP: now has keyword statistics
+- admin-nav: if not on top level link to main menu is shown
+- Textcats: new key: unav_cp_mainmenu
+- CP: "add keyword" functionality has been added
+- CP: now has DB Statistics
+- cleanup and reorganisation of code
+- New option in .pss.conf: comment_is_filename_if_not_in_db
+- bcmath library is no longer needed, if not loaded performance data wont be put out
+- The stylesheet is now in an extra-file, pss.css wich is read from either the directory
+  where the pss.php resides ot if not present there in the include directory.
+  Because of this all style-related sections in the .pss.conf are now obsolete.
+- Many elements have been made configurable by stylesheets
+- Made the horizontal ruler wich seperates parts of the output page configurable, new key in pss.conf [global] -> hr - "<hr>"
+- Added "Whereami" to thumbs navigation (atm only when multiple pages are available for view),
+  new pss.conf value: [global] -> show_whereami - true/false and: whereami_name - filename
+- The select boxes should now be preselected correctly when navigating in the search results
+- On the thumbs view with multiple pages, the links to the first and the last page can now
+  be disabled in pss.conf -> [table] -> pagesnav_show_home_end
+- "Close Window" Text has been removed on bottom of popup window, therefor the following textcat string is now obsolete: image_nav_popup_close_2
+- Support for external graphic handlers has been removed, too many server-freezes and GDLIB works good enough
+  The following Keys in the pss.php configuration file are now obsolete:
+  image_handler, exe_convert
+
+>>> 2.07b release - 20.06.2006 <<<
+- GIF support with GDLIB enabled
+- Fix: "Select all" (images) did not work because of use of an old variable name
+  ($aImages instead of $PSS["images"]
+- function name changed from getComment to getFiledata, function changed a little too
+- added write_ini_file() in func.misc.inc
+- fix: search selects are now updated correctly in embeded mode
+- moved: getting file data in showImage() moved to function getComment(), func.db.inc - name change later
+- removed browsercheck.js - obsolete
+- comment is now shown in the correct language if defined, first language as
+  configured in pss.php or english if both are not available
+- comment is now displayed and editable in all defined languages (pss.php - $PSS["admin_comment_languages"])
+- align of image in table-cell now settable for singlecol mode
+- valign now settable in config
+- new: in singlecol mode the thumbs-height is now available in the comment using: [height]
+- admin: if logged in and plevel <= 1 [thumbs] singlecol_img_links_dir is overridden to false
+- new config value in .pss.conf: [table] singlecol_side_image takes: left / right
+- new keys in .pss.conf: [imgview] und [thumbs], both: frame_image, frame_image_color
+  results in a frame of 1px around the image
+- singlecol_space now accepts 0 as a value
+- new key in pss.php: db_table_comments - new db table
+- new .pss.conf key: singlecol_img_links_dir - if true and thumbs are shown in
+  single col and there is a hidden directory (with leading colon and without
+  file-extension, eg: folder.jpg -> .folder/) matching the filename the image
+  will link to this directory
+- Workaround: Files containing URL-reserved characters (eg. & +) are now displayed
+  correct and managable in the admin-interface
+- Preperation of the Control Panel
+- Control Panel: change password implemented, not in textcats yet, needs more styling
+- Fix: if logged in and no keywords exist an error message was displayed
+- Feature: textcats can now be placed in a user-defined directory
+
+>>> 2.04 release - 25.05.2004 <<<
+- Fix: When dirs were sorted DESC "parent directory" link was displayed on
+  bottom of list
+- When run_mode == embeded (in pss.php) wrong links were generated in popups
+  removed config key - obsolete
+- Fixes for language detection
+- New .pss.conf keys:
+  click_links_back_help = top ; top / bottom | undocumented
+  click_links_back_help_linked = false ; undocumented
+
+>>> 2.03 release - 28.04.2004 <<<
+- Rewrite of base.inc, many variable-names have been changed thoughout the whole
+  script
+- Uploads can now be done in popups (important for embeded mode)
+- New keys in .pss.conf: [imgview] position_navi, click_links_back
+- Removed key in .pss.conf: [popup] click_image_closes
+- New files: prerequisites.inc, functions.javascript.inc
+- New key: .upload.conf type = onpage / popup
+- New key: .pss.conf [table] fixedwidth
+
+>>> 2.02 release - 22.04.2004 <<<
+- Variable-names have been cutted to a shorter versions
+- Vertical and horizontal spacing between images in thumbs-view has been added
+- The image-comment position and width has been moved from pss.php to .pss.conf
+- embeded mode now also works if picture is not displayed in popup but on the same
+  page and with search enabled - current limitations: no login, no uploads
+- New: run_mode auto this will set the run_mode automatically
+- session.auto_start must be disabled in the hosts configuration
+- Removed: .pss.conf [table] - spacing, padding, border (obsolete)
+
+>>> 2.01 release - 06.04.2004 <<<
+- Fix: directories with spaces now work in embeded mode
+- Change: added closing hr when running embeded
+- Fix: body tag now shown if displaying picture
+- Fix: documentation used wrong style
+- Feature: script now can be run embeded in an existing website
+- new file: pss_codebase/misc/pss_embed.php - call this file and the function
+  pss_embed() to embed the script - both, website and script must run on the same
+  vhost, the script must run on /content/
+- new pss.php options added: $PSS["run_mode"] = 'standalone'; // standalone / embeded,
+  $PSS["run_dir"] = '/content/' - do not change this value for now
+  (only needed for embeded mode, this is where the script links to display popup-images
+- Change: all stylesheet-classes have been changed to start with: pss_ to ensure
+  compatibility if run embeded
+- Fix: if no HTTP_ACCEPT_LANGUAGE is sent by the browser an error message was displayed
+- Fix: after 2.01 if admin_enable = false - error message
+- Tested: Ths script was successfully tested with PHP5 RC1
+- Change: the names of these variables have changed: $PSS_ -> $PSS, $C_ -> $C, $oDB -> $DB
+- base.inc cleaned up, code moved to external files, new file: functions.user.inc
+- Fix: function spacer() produced /stools/0.gif (old path)
+- Fix: error message after upload
+- Fix: Login page IE produces JS-Error, dont show search js there
+- Fix: if image was shown in same window, going back to the index would send you
+  to the first page, no matter wich page you came from
+- Fix: Upload-notice would not be displayed with IE if the form was submitted by
+  pressing enter not by clicking the button
+
+>>> 2.00 release - 02.03.2004 <<<
+- Fix: Cookie was not set to domain root so it was lost when changing to a
+  higher-level directory
+- .readme was not shown in directories with spaces in name
+- New pss.php keys: allow_changelog, allow_documentation if set to false link
+  will not be shown in footer (if the footer is enabled of course)
+- No more JS shown on message-pages
+- ?documentation now shows documentation if enabled in pss.php
+- ?changelog now shows changelog if enabled in pss.php
+- Fix: Upload: too much space (vertical) to next element
+
+>>> 2.00 release candidate 2 - 01.03.2004 <<<
+- .httpd.conf was renamed to .pss.conf
+- Fix: if show_parent_link == false and no subdirs present only navigation title
+  is shown -> now shows "nothing to list" string
+- Fix: admin-menu was displayed in upload-dirs
+- Fix: in upload-dirs function populateSelect (JS) gives out an js-errormessage
+  on IE because selects fields to populate dont extist in upload-dirs
+- GET-parameter for language-parameter is now set to lowercase. on case-sensitive
+  file-systems the textcat-name must be all lowercase!
+- if GET variables were set "Parent directory" was displayed in root-folder
+
+>>> 2.00 release candidate 1 - 27.02.2004 <<<
+- Fix: Select-Style nun über .httpd.conf konfigurierbar
+- Fix: $_GET["view"] is now checked if file exists, if not directory-overview
+  is shown
+- When in view-mode the pagetitle now is cleaned up, not displaying /?view=image.jpg
+  but image.jpg
+- Added: Automatic language detection, fallback-system, language can be passed to
+  script by GET-var: PSS_LANG, script will set cookie to keep setting new pss.php
+  keys: textcat_autodetect, textcat_prefix, textcat_fallback
+
+>>> 2.00 beta 5 sub 06 - 23.02.2004 <<<
+- Fix: configreader: urldecode für request-path eingefügt da sonst einlesen
+  bei Verz. mit Sonderzeichen (spaces) unter linux probleme
+
+>>> 2.00 beta 5 sub 05 - 19.02.2004 <<<
+- Added upload enhancments: now shows max. upload size and error-message if files
+  were too big. New Textcat-keys: upload_msg_maxsize_1, upload_msg_maxsize_2,
+  upload_msg_maxsize_3, upload_msg_er_maxsize
+
+>>> 2.00 beta 5 sub 04 - 06.02.2004 <<<
+- Added MS-Sql support
+
+>>> 2.00 beta 5 sub 03 - 05.02.2004 <<<
+- code-cleanup in base.inc and func.template
+
+>>> 2.00 beta 5 sub 02 - 05.02.2004 <<<
+- New config option (pss.php) "inherit_parentlink", bewirkt, wenn false, daß
+  der wert [directory]-show_parent_link nicht vererbt wird
+
+>>> 2.00 beta 5 sub 01 - 04.02.2004 <<<
+- Upload fixed broken since 2.00.5
+
+>>> 2.00 beta 5 - 04.02.2004 <<<
+- The script is looking for the configuration-file .httpd.conf in subfolders now
+  like apache .htaccess, the configreader has been changed to use the php-function
+  parse_ini_file(). string-values in this file should now be included in
+  double-quotes
+
+>>> 2.00 beta 4 sub 11 - 04.02.2004 <<<
+- Neue pss.php config-option: thumbs_enable, aus .httpd.conf entfernt
+
+>>> 2.00 beta 4 sub 10 - 04.02.2004 <<<
+- GDLib für bild-resize/rotate implementiert - kein GIF-Support!! GIFs werden
+  zur Zeit übergangen, noch keine Ausweichmöglichkeit vorhanden.
+
+>>> 2.00 beta 4 sub 09 - 02.02.2004 <<<
+- Wenn linux, nach generieren von script-files/dirs (thumbs/resizes/rotates)
+  chmod 777, pss.php configoption: linux_chmod_generated
+- fix: Wenn keine Kategorien konfguriert und suche aktiv php-fehlermendung
+- Deutscher Textkatalog hinzugefügt
+
+>>> 2.00 beta 4 sub 08 - 30.12.2003 <<<
+- Directory-sorting jetzt ascending und descending möglich
+
+>>> 2.00 beta 4 sub 07 - 01.12.2003 <<<
+- Bei Upload -> wenn upload abgesendet textmeldung deutlich sichtbar einblenden
+
+>>> 2.00 beta 4 sub 06 - 11.11.2003 <<<
+- New option "[thumbs] crop_extension": crops the file-extension in thumbs-display
+
+>>> 2.00 beta 4 sub 05 - 11.11.2003 <<<
+- Fix: If one or no search-selects is shown -> JS error populateSelect not defined
+- Textchange: file_head: None Images -> Files
+- Optimisation: popup-js now only displayed if needed
+- Optimisation: base.inc reading file-tree
+- Fix: if showthumbs == false images were not displayed in file list
+
+>>> 2.00 beta 4 sub 04 - 07.11.2003 <<<
+- Fix: script responded to "?login" even if admin_enable was set to false
+
+>>> 2.00 beta 4 sub 03 - 11.10.2003 <<<
+- the thumbs-admin-form has been redesigned
+- new key in textcat: thumbs_admin_head
+
+>>> 2.00 beta 4 sub 02 - 11.10.2003 <<<
+- fix: search was broken since beta 4
+
+>>> 2.00 beta 4 sub 01 - 11.10.2003 <<<
+- js code im head aufgeräumt, script tag öffnete und schloß ggf mehrmals, auf
+  einmal reduziert
+
+>>> 2.00 beta 4 - 11.10.2003 <<<
+- the 2nd search-selectbox is now beeing refilled to show only matching
+  keywords to the parent selectbox (JS) not working together with user-search yet
+
+>>> 2.00 beta 3 sub 08 - 08.10.2003 <<<
+- prepareCastegories hat einen neuen ersten parameter, wenn true werden alle
+  keywords ausgelesen, wenn leer oder false nur keywords mit matches -> adminmenu
+
+>>> 2.00 beta 3 sub 07 - 08.10.2003 <<<
+- fix: error-message when in search mode
+- fix: strange display when in search mode and pages
+
+>>> 2.00 beta 3 sub 06 - 08.10.2003 <<<
+- file operations are now only done in base.inc, the function showImage has
+  been depleted of file functions
+- fix: file operations were not working if in dir-mode and shown in top position
+- file sorting for both modes now
+
+>>> 2.00 beta 3 sub 05 - 08.10.2003 <<<
+- more alphabetical changes: usernames, keywords when displayed as text,
+  keywords in remove select-field in image mode
+- fix for error message if admin enable false and singlecol mode
+- fix for broken html when admin_enable false und singlecol mode: table had not
+  been closed after image tag
+
+>>> 2.00 beta 3 sub 04 - 08.10.2003 <<<
+- keywords are now sorted alphabeticaly in select fields
+
+>>> 2.00 beta 3 sub 03 - 08.10.2003 <<<
+! SQL Upgrade has to be executed on all databases:
+  the needed sql-query is supplied in:
+  pss_codebase/misc/sql_upgrades/2_00_beta_03_02-2_00_beta_3_sub_03.sql
+- position of thumbs-admin-menu is now settable via the usermenu
+
+>>> 2.00 beta 3 sub 02 - 07.10.2003 <<<
+- position of pagesnavi now configurable
+- new variable in .httpd.conf:
+  [table] -> position_pagesnav - possible values: top, bottom, both

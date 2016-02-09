@@ -1,0 +1,158 @@
+<strong>Welcome to the documentation page of the PSite Suite ver. 2.03 (28.04.2004)</strong><br><br>
+The PSite Suite is a tool for webmasters and server-administrators, it replaces the default indexing engine and shows<br>
+the directory-content split into areas:<br>
+<ul>
+<li>The First area is the navigation. Here all available directorys will be listed.</li>
+<li>Next there is the image-area, where all images contained in the directory are shown as thumbnails.<br>
+You can choose to automatically generate thumbnails in a subdirectory or to display the full-sized<br>
+pictures shrinked to thumbnail-size. If thumbnail-generation is turned on, the script will check if the<br>
+full-sized picture have been changed or the thumb-sizes in the config have been altered, and if,<br>
+it will regenerate the thumbnail.</li>
+<li>The last area finally lists the non-image files in the directory along with their filesizes.</li>
+</ul>
+You can supply a readme file that's content will be displayed on one of four positions of the page you can choose, you<br>
+can configure each directory with different settings, like the colors, wich fonts to use in wich size and so on.<br>
+<br>
+<strong>The Config File:</strong><br>
+The config-file is called '<em>.pss.conf</em>' and should be in the root of your web and in every directory you want to configure<br>
+in a different way than the rest of you web. All values missing in one of these config-files will be replaced by the default<br>
+values of the webserver. Please note, that indexing is turned of by default. The config-file is divided into serveral sections<br>
+like [global], [body] or [table]. You don't need to have all keys and/or sections in your file, missing values are taken from<br>
+the default-config-files.<br>
+<br>
+Let me explain the keys and values of the config-file showing them with the default values:<br>
+<br>
+Section <strong>[global]</strong>:<br>
+<ul>
+<li><strong>showhidden</strong> = <em>false</em><br>
+You can 'hide' a file/dir from the listing if the filename/dirname starts with a period ( . ),<br>
+if this is set to <em>true</em>, files/dirs starting with a period WILL be listed.</li>
+<li><strong>showindex</strong> = <em>false</em><br>
+Disables the indexing by default. If you set this to <em>true</em>, listing will be enabled.</li>
+<li><strong>readme_name</strong> = <em>".readme"</em><br>
+Filename of the readme-file to be displayed by default.</li>
+<li><strong>show_navigation</strong> = <em>true</em><br>
+If set to <em>false</em>, the navigation won't be displayed</li>
+<li><strong>show_readme</strong> = <em>true</em><br>
+If set to <em>false</em>, the readme (if exist) won't be displayed</li>
+<li><strong>show_thumbs</strong> = <em>true</em><br>
+If set to <em>false</em>, the thumbs (if exist) won't be displayed</li>
+<li><strong>show_files</strong> = <em>true</em><br>
+If set to <em>false</em>, the files (if exist) won't be displayed</li>
+<li><strong>show_search</strong> = <em>true</em><br>
+If set to <em>false</em>, the search-form (if the search is enabled) won't be displayed</li>
+<li><strong>item_1</strong> = <em>"navigation"</em><br>
+First section to display.</li>
+<li><strong>item_2</strong> = <em>"readme"</em><br>
+Second section to display.</li>
+<li><strong>item_3</strong> = <em>"thumbs"</em><br>
+Third section to display.</li>
+<li><strong>item_4</strong> = <em>"files"</em><br>
+Fourth section to display.</li>
+<li><strong>rotate</strong> = <em>false</em><br>
+If set to <em>true</em> the script will also generate rotated versions of your images.</li>
+<li><strong>nav_sort</strong> = <em>"asc"</em><br>
+asc / desc</li>
+</ul>
+Section <strong>[table]</strong>:<br>
+<ul>
+<li><strong>limitrows</strong> = <em>true</em></li>
+<li><strong>position_pagesnav</strong> = <em>"both"</em><br>
+top / bottom / both</li>
+<li><strong>maxcols</strong> = <em>5</em><br>
+How many cols should the images-table have?</li>
+<li><strong>maxrows</strong> = <em>5</em></li>
+</ul>
+Section <strong>[imgview]</strong>:<br>
+<ul>
+<li><strong>limitsize</strong> = <em>false</em><br>
+Set to <em>true</em> if you want to limit the size in wich pictures are displayed</li>
+<li><strong>maxwidth</strong> = <em>800</em><br>
+Maximum width of pictures, when limited (<em>numeric</em>)</li>
+<li><strong>maxheight</strong> = <em>600</em><br>
+Maximum height of pictures, when limited (<em>numeric</em>)</li>
+<li><strong>allow_osize</strong> = <em>false</em><br>
+Allow viewing limited pictures in original size</li>
+<li><strong>show_navi</strong> = <em>true</em><br>
+Show image-navigation if in view-mode</li>
+<li><strong>show_name</strong> = <em>true</em><br>
+Show filename in view-mode</li>
+<li><strong>show_dimensions</strong> = <em>true</em><br>
+Show image-dimensions in view-mode</li>
+<li><strong>show_type</strong> = <em>true</em><br>
+Show image-type in view-mode</li>
+<li><strong>show_size</strong> = <em>true</em><br>
+Show filesize in view-mode</li>
+<li><strong>show_date</strong> = <em>true</em><br>
+Show filedate in view-mode</li>
+<li><strong>show_link</strong> = <em>true</em><br>
+Show link in view-mode</li>
+<li><strong>show_oimage</strong> = <em>true</em><br>
+Show original image-data when displaying a resized image</li>
+<li><strong>comment_position</strong> = <em>bottom</em><br>
+Where to display the image-comment (only if comments enabled) bottom / right</li>
+<li><strong>comment_width</strong> = <em>150</em><br>
+How much space should be reserved for image-comment (only if comments enabled and displayed on the right)</li>
+<li><strong>position_navi</strong> = <em>both</em><br>
+Where should the navigation be displayed (both / top / bottom)</li>
+<li><strong>click_links_back</strong> = <em>true</em><br>
+Click on the image sends you back to the index (closes popup)</li>
+</ul>
+Section <strong>[thumbs]</strong>:<br>
+<ul>
+<li><strong>maxwidth</strong> = <em>150</em><br>
+Maximum width for the thumbnails.</li>
+<li><strong>maxheight</strong> = <em>150</em><br>
+Maximum height for the thumbnails.</li>
+<li><strong>show_name</strong> = <em>true</em><br>
+Show filename in thumbs-listing</li>
+<li><strong>show_date</strong> = <em>true</em><br>
+Show filedate in thumbs-listing</li>
+<li><strong>show_dimensions</strong> = <em>true</em><br>
+Show image-dimensions in thumbs-listing</li>
+<li><strong>show_size</strong> = <em>true</em><br>
+Show filesize in thumbs-listing</li>
+<li><strong>link_name</strong> = <em>true</em><br>
+Link the filename directly to the image (no further processing, though the image itself will still be linked<br>
+to view-mode)</li>
+<li><strong>show_help</strong> = <em>true</em><br>
+Show helptext in thumbs-listing</li>
+<li><strong>show_number</strong> = <em>true</em><br>
+Show number of images in thumbs-listing</li>
+<li><strong>show_generated</strong> = <em>true</em><br>
+If new thumbs have been generated, display the number at the bottom of the thumbs-listing</li>
+<li><strong>crop_extension</strong> = <em>false</em></li>
+</ul>
+Section <strong>[popup]</strong>:<br>
+<ul>
+<li><strong>enable</strong> = <em>true</em><br>
+Show images in popup-windows</li>
+<li><strong>width</strong> = <em>810</em><br>
+Width of popup-window</li>
+<li><strong>height</strong> = <em>685</em><br>
+Height of popup-window</li>
+<li><strong>auto_resize</strong> = <em>true</em></li>
+<li><strong>auto_resize_width</strong> = <em>25</em></li>
+<li><strong>auto_resize_height</strong> = <em>135</em></li>
+</ul>
+Section <strong>[directory]</strong>:<br>
+The directive here is meant ONLY für subdirectories, you won't break anything if you put it somewhere<br>
+else, but also, nothing will happen by this. This is meant for sites that want to use the script in<br>
+subdirectories only. Set it to <em>false</em> in the directory in wich you dont want to link to the parent dir.
+<ul>
+<li><strong>show_parent_link</strong> = <em>true</em><br>
+Enable/disable linking to the parent directory.</li>
+</ul>
+<br>
+<strong>The .readme file</strong>:<br>
+You can put any text or html into this file, excluding the complete head and the body-tags. The content of this file<br>
+will NOT be parsed by any script-engine.
+<br>
+<br>
+<strong>CSS Keys</strong>:<br>
+<b>.pss_th_na_le:</b> thumbs navi left<br>
+<b>.pss_th_na_num:</b> thumbs navi numbers<br>
+<b>.pss_th_na_re:</b> thumbs navi right<br>
+<br>
+<strong>Questions?</strong><br>
+Ask me: <a href="mailto:mail@marcus.haase.name"><em>mail@marcus.haase.name</em></a><br>

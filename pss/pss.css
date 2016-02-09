@@ -1,0 +1,84 @@
+.pss_head,
+.pss_large,
+.pss_main,
+.pss_fsnav,
+.pss_fsnav a,
+.pss_fsnav_headline,
+.pss_filename,
+.pss_fileinfo,
+.pss_fileinfo_headline,
+.pss_readme
+{ Color:#ffffff; Font-Family:"Arial"; }
+
+.pss_debug { Color: #ffffff; Font-Family: "Monospace"; Border: 1px solid red; padding: 5px; }
+
+.pss_fileinfo_headline { Font-Size: 0.9em; Color:#ff0000; }
+
+.pss_main a,
+.pss_filename a
+{ Color:#55aaff; }
+
+.pss_head { Font-Size:1.5em; }
+.pss_large { Font-Size:1.3em; }
+.pss_main { Font-Size:1.04em; }
+
+.pss_imagecell { padding: 0 5px 0 0; vertical-align: bottom; }
+#pss_imagetable {  }
+
+.pss_filename { padding: 2px 0; }
+
+.pss_fsnav,
+.pss_fsnav_headline
+{ Font-Size:1.04em; }
+
+ul.pss_fsnav { margin: 0; padding: 0 0 0 0px; list-style-type: none; }
+ul.pss_fsnav li { background-position: 2px -1px; background-repeat: no-repeat; }
+ul.pss_fsnav li a { padding-left: 20px; width: 100%; height: 100%; display: inline; }
+
+ul.pss_fsnav li.pss_fsnav_up { background-image: url(/pss/icons/arrow_upleft.png); }
+ul.pss_fsnav li.pss_fsnav_dir { background-image: url(/pss/icons/folder.png); }
+ul.pss_fsnav li.pss_fsnav_unknown { background-image: url(/pss/icons/application_xp_terminal.png); }
+ul.pss_fsnav li.pss_fsnav_movie { background-image: url(/pss/icons/film.png); }
+ul.pss_fsnav li.pss_fsnav_executable { background-image: url(/pss/icons/application.png); }
+ul.pss_fsnav li.pss_fsnav_compressed { background-image: url(/pss/icons/package.png); }
+ul.pss_fsnav li.pss_fsnav_webdoc { background-image: url(/pss/icons/page_white_world.png); }
+ul.pss_fsnav li.pss_fsnav_doc { background-image: url(/pss/icons/page_white_word.png); }
+ul.pss_fsnav li.pss_fsnav_pdf { background-image: url(/pss/icons/page_white_world.png); }
+
+.pss_filename, .pss_fileinfo { Font-Size:1.04em; }
+
+.pss_comment_right, .pss_comment_bottom { Color:#212131; Font-Family:"Courier New"; background:#ffffff; Font-Size:1.04em; }
+.pss_comment_right { padding:10px; }
+.pss_comment_bottom { padding:2px 3px; }
+
+.pss_formtext, .pss_formselect, .pss_formsubmit { Color:#000000; Font-Family:"Courier New", Monospace; background:#f0f0f0; }
+.pss_formtext, .pss_formsubmit { height:19px; padding-left:1px; border:1px solid; }
+.pss_formtext { Font-Size:1.04em; }
+.pss_formselect { Font-Size:1.03em; }
+.pss_formsubmit { Font-Size:1.03em; }
+
+.pss_whereami { color:#ffffff; }
+
+.pss_pagesnav {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pss_pagesnav li {
+    float: left;
+    padding: 2px 5px;
+}
+
+.pss_th_na_le { margin-right: 1px; }
+.pss_th_na_re { margin-left: 1px; }
+.pss_th_na_le, .pss_th_na_re { background:#b4b4b4; }
+.pss_th_na_num { background:#ffffff; }
+.pss_th_na_le a, .pss_th_na_re a, .pss_th_na_num a { color:#212131; }
+
+.pss_img_na_ba { margin-right: 1px; }
+.pss_img_na_fo { margin-left: 1px; }
+.pss_img_na_ba, .pss_img_na_fo { background:#b4b4b4; }
+.pss_img_na_cl { background:#ffffff; }
+.pss_img_na_ba a, .pss_img_na_cl a, .pss_img_na_fo a { color:#212131; }

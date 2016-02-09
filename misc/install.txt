@@ -1,0 +1,71 @@
+PSS Installationsanleitung v. 2.04d2
+
+Systemvorraussetzungen:
+Win32 / Linux / *NIX
+Apache / Apache2
+PHP 4.3.0 oder neuer / PHP 5 RC1 oder neuer
+GDLIB / Imagemagick 4.2.9 oder neuer für automatische thumbs-erstellung
+Mysql 3.23.x / 4.0.x für Bildkommentare und Suchfunktion
+PHPMyAdmin (DB Installation und Verwaltung)
+PHP Safe_Mode off (betrieb auch im safe_mode möglich, hierfür muss die
+  safe_mode Konfiguration angepasst werden (open_basedir))
+Zend Optimizer
+
+Installation:
+
+1. "Codebase Setup"
+Die Scriptdateien sollten an einen Ort kopiert werden der von der webroot (htdocs)
+aus nicht erreichbar ist. Die benötigten Dateien werden später per include geholt.
+
+Beispiel:
+d:\webs\pss_codebase oder /srv/www/pss_codebase/
+
+Die "codebase" kann von mehreren das Script benutzenden Hosts aus genutzt werden.
+
+2. "Host Setup"
+Im Ordner pss_codebase befindet sich ein Verzeichniss mit dem Namen "misc". Dort
+finden sich Informationen und Beispieldateien.
+Bitte erstellen Sie einen weiteren Ordner (einer für jeden Host, hier werden die
+aufrufenden Dateien abgelegt und die Grundkonfiguration festgelegt) außerhalb
+der webroot, am besten, je nach Ordnerlayout, einen den Sie gedanklich leicht
+mit "pss" und dem Host verbinden können.
+
+Beispielsituation 1:
+Existierernde Struktur:
+d:\webs\hostname.tld\htdocs\ (webroot)
+
+Neuer Ordner:
+d:\webs\hostname.tld\pss\
+
+Beispielsituation 2:
+Existierende Struktur:
+d:\webs\hostname.tld\ (webroot)
+
+Neuer Ordner:
+d:\webs\hostname.tld_pss\
+
+In diesen Ordner kopieren Sie bitte die folgenden Dateien aus dem "misc" Ordner:
+0.gif, browsercheck.js, pss.php, pss_embed.php
+
+Die Datei pss.php ist das aufrufende Script, in Ihr wird auch die Grundkonfiguration
+festgelegt.
+
+Bitte korrigieren Sie die dort angegebenen Beispielwerte passend zu Ihrem System.
+
+Als nächstes kopieren Sie bitte die Datei ".pss.conf" in Ihre webroot. In dieser
+Datei konfigurieren Sie das Erscheinungsbild der Ausgegebenen Seiten.
+
+Der letzte Schritt in diesem Abschnitt ist die Anpassung der Apache Konfiguration.
+Hierzu öffnen Sie bitte die Datei in der Sich die Konfiguration des Hosts befindet.
+
+Ergänzen Sie bitte die folgenden beiden Werte:
+Alias /pss/ "d:/webs/hostname.tld/pss/" # (Ihr Aufrufendes Verzeichniss)
+DirectoryIndex index.htm index.html index.php /pss/pss.php
+
+Nach einem Neustart des Webservers sind Sie mit der Einrichtung des Grundsystems
+fertig. Wenn Sie Kommentare zu Bildern schreiben wollen oder die Suchfunktion 
+nutzen möchten müssen Sie noch das Datenbanksystem einrichten.
+
+
+
+

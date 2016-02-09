@@ -1,0 +1,147 @@
+<?php
+// $Id: en.cat,v 1.6 2007/05/30 10:27:49 mhaase Exp $
+
+$T = array(
+	// Misc. messages
+	'continue' => 'Continue &gt;&gt;',
+	'back' => '&lt;&lt; Back',
+
+	// Login messages
+	'login_formhead' => 'Please enter your username and password here:',
+	'login_submittext' => 'Login',
+	'login_success' => 'Login successful.',
+	'login_fail' => 'Login failed, please check the username and password.',
+	'login_logout' => 'You have been logged out.',
+
+	// Action messages
+	'actions_none' => 'No actions were taken.',
+	'actions_link_1' => 'The file(s) "',
+	'actions_link_2' => '" have been linked.',
+	'actions_unlink_1' => 'The file(s) "',
+	'actions_unlink_2' => '" have been unlinked.',
+	'actions_keyword_1' => 'The keyword has been added to the following file(s): "',
+	'actions_keyword_2' => '"',
+	'actions_keyword_remove' => 'The keyword has been removed.',
+	'actions_comment' => 'The file-comments have been changed.',
+	'actions_owner' => 'The file-owner has been changed.',
+
+	'actions_link_ft' => 'The file has been linked.',
+	'actions_keyword_ft' => 'The keyword has been added.',
+	'actions_keyword_remove_ft' => 'The keyword has been removed.',
+
+	// Languages
+	'language_en' => 'English',
+	'language_de' => 'German',
+
+	// User navigation
+	'unav_head' => 'User menu:',
+	'unav_listing_splitted' => 'splitted listing',
+	'unav_listing_full' => 'full listing',
+	'unav_cp' => 'control panel',
+	'unav_cp_mainmenu' => 'main menu',
+	'unav_cp_leave' => 'leave cp',
+	'unav_logout' => 'logout',
+	'unav_whoami_1' => 'You are logged in as: <strong>',
+	'unav_whoami_2' => '</strong>.',
+
+	// Error messages
+	'error_403' => '403 Forbidden.',
+	'error_denied' => 'Access denied.',
+
+	// Search messages
+	'search_submittext' => 'Search now',
+	'search_noresults' => 'No matching files found!',
+	'search_string_all' => 'All',
+	'search_byuser_string' => 'Search by user',
+
+	// JS messages (eg. alert windows)
+	'js_msg_nofiles' => 'No files selected',
+
+	// Image messages (when image is viewed)
+	'image_nav_popup_close_1' => '<strong>Close</strong>',
+	'image_nav_left' => '<strong>&lt;&lt;</strong>',
+	'image_nav_index' => '<strong>Index</strong>',
+	'image_nav_right' => '<strong>&gt;&gt;</strong>',
+	'image_nav_rotate_1' => 'Rotate image by ',
+	'image_nav_rotate_2' => ' degrees.',
+	'image_nav_osize' => 'Show in original size',
+	'image_nav_resized' => 'Show resized',
+	'image_nav_clickonimagecloses' => 'Click on image to close popup<br>',
+	'image_nav_clickonimageback' => 'Click on image to return to listing',
+	'image_admin_head' => 'File Administration',
+	'image_admin_notlinked_1' => 'This file is not linked yet, to link it click ',
+	'image_admin_notlinked_2' => 'here',
+	'image_admin_notlinked_3' => '.',
+	'image_admin_nokeywords' => 'This file has no keywords associated.',
+	'image_admin_keywords_head' => 'The following keywords are associated with this file:',
+	'image_admin_addkeyword_head' => 'To add a keyword, please choose it below and press "Submit".',
+	'image_admin_submittext' => 'Submit',
+	'image_admin_delkeyword_head' => 'To remove a keyword please choose it below and press "Submit".',
+	'image_admin_comment_head' => 'You can add a comment for this file here:',
+	'image_admin_unlink_1' => 'Click ',
+	'image_admin_unlink_2' => 'here',
+	'image_admin_unlink_3' => ' to unlink this file.',
+	'image_admin_gotoimage' => ' Go to image ',
+	'image_info_head' => 'Image Infos:',
+	'image_info_oimage_head' => 'Original Image Infos:',
+	'image_info_resized_head' => 'Resized Image Infos:',
+	'image_info_name' => 'Name:',
+	'image_info_width' => 'Width:',
+	'image_info_height' => 'Height:',
+	'image_info_type' => 'Type:',
+	'image_info_size_1' => 'Size:',
+	'image_info_size_2' => 'Bytes',
+	'image_info_date' => 'Filedate:',
+	'image_info_link' => 'Link:',
+
+	// Navigation messages (file-system nav)
+	'nav_head' => 'Navigation:',
+	'nav_back' => 'Back to file browsing',
+	'nav_parent' => 'Parent Directory',
+	'nav_empty' => 'No directories to list...',
+
+	// Thumbs messages
+	'thumbs_pagesnav_head' => 'Select page to view:<br>',
+	'thumbs_pagesnav_leftleft' => '&lt;&lt;',
+	'thumbs_pagesnav_left' => '&lt;',
+	'thumbs_pagesnav_right' => '&gt;',
+	'thumbs_pagesnav_rightright' => '&gt;&gt;',
+	'thumbs_help_head_1' => 'To view a picture click on it.',
+	'thumbs_help_head_2' => 'For the direct download-link please use the filename below.',
+	'thumbs_help_load_1' => 'Loading',
+	'thumbs_help_load_2' => 'images...',
+	'thumbs_help_load_3' => 'Loading image',
+	'thumbs_help_load_4' => 'to',
+	'thumbs_help_load_5' => 'of',
+	'thumbs_help_load_6' => '...',
+	'thumbs_info_date' => 'Uploaded:',
+	'thumbs_info_dimensions' => 'Dimensions:',
+	'thumbs_info_size' => 'Size:',
+	'thumbs_admin_head' => 'Administration options:',
+	'thumbs_admin_checkboxtext' => 'check to include in action',
+	'thumbs_admin_notlinked' => 'File is not linked.',
+	'thumbs_admin_linked' => 'File is linked.',
+	'thumbs_admin_owner' => 'Owner:',
+	'thumbs_admin_keywords' => 'Keywords:',
+	'thumbs_admin_select_link' => 'Link selected files',
+	'thumbs_admin_select_chown' => 'Change file-owner',
+	'thumbs_admin_select_comment' => 'Change file-comment',
+	'thumbs_admin_select_addkey' => 'Add keyword to selected files',
+	'thumbs_admin_select_delkey' => 'Remove keyword from selected files',
+	'thumbs_admin_select_unlink' => 'Unlink selected files',
+	'thumbs_admin_selectall' => 'Select all',
+	'thumbs_admin_unselectall' => 'Unselect all',
+	'thumbs_admin_submittext' => 'Submit',
+	'thumbs_admin_keywordselect_head' => 'Keywords:',
+	'thumbs_admin_usersselect_head' => 'Users:',
+	'thumbs_admin_comment_head' => 'Comment:',
+	'thumbs_info_generated' => 'Thumbnail(s) were generated.',
+
+	// File-listing messages
+	'file_head' => 'Files:',
+  'file_size_bytes' => 'Bytes',
+  'file_size_kbytes' => 'KBytes',
+  'file_size_mbytes' => 'MBytes',
+);
+
+?>

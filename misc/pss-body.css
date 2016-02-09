@@ -1,0 +1,11 @@
+body {
+    font-size: x-small;
+    background: #cfcfcf;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: #2e2e2e;
+}
+
+a { Text-Decoration:none; }
+a:hover { Text-Decoration:underline; }
+
