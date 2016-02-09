@@ -1,0 +1,19 @@
+{
+  "name": "haaseit/vahi",
+  "description": "A replacement for the apache directory indexer",
+  "type": "project",
+  "homepage": "http://www.haase-it.com/",
+  "authors" : [
+    {
+      "name": "Marcus Haase",
+      "email": "mail@marcus.haase.name",
+      "homepage": "http://www.haase-it.com",
+      "role": "Developer"
+    }
+  ],
+  "license": "GPL-3.0+",
+  "require": {
+    "php": "^5.4 | ^7.0",
+    "haaseit/toolbox": "^1.2.6",
+  }
+}
