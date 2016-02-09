@@ -84,7 +84,7 @@ $PSS["textcat_fallback"] = true; // bool
 $PSS["textcat_file"] = 'en'; // en / de
 
 // DB Parameters only need to be filled if search is activated
-$PSS["db_type"] = 'mysql'; // mysql / mssql
+$PSS["db_type"] = 'mysqli'; // mysqli / mssql
 $PSS["db_server"] = 'localhost'; // db-hostname
 $PSS["db_user"] = 'root'; // db-username
 $PSS["db_password"] = ''; // db-password
@@ -116,5 +116,3 @@ $PSS["debug_enable"] = true; // bool
 
 // Please dont remove or change the following line, the script wont work if
 include($PSS["path_codebase"].'base.inc');
-
-?>
